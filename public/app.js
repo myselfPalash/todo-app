@@ -320,6 +320,9 @@ async function saveEdit(task, input) {
 }
 
 async function deleteTask(task) {
+  if (busy) return;
+  const message = `Are you sure you want to delete this task? "${task.description}"`;
+  if (!window.confirm(message)) return;
   const ok = await mutate('DELETE', `${API}/${encodeURIComponent(task.id)}`);
   if (ok) {
     newTaskInput.focus();
