@@ -1,0 +1,207 @@
+/* Todo app styles. No external resources (CSP: style-src 'self'). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #f5f6f8;
+}
+
+main {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #d9dce1;
+  border-radius: 0.5rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+}
+
+h2 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.add-row,
+.edit-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.625rem;
+  font: inherit;
+  border: 1px solid #8a919c;
+  border-radius: 0.25rem;
+}
+
+button {
+  padding: 0.5rem 0.875rem;
+  font: inherit;
+  color: #ffffff;
+  background: #1f5fbf;
+  border: 1px solid #1f5fbf;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #184c99;
+}
+
+button.secondary {
+  color: #1a1a1a;
+  background: #ffffff;
+  border-color: #8a919c;
+}
+
+button.secondary:hover {
+  background: #eceef1;
+}
+
+button.danger {
+  background: #b3261e;
+  border-color: #b3261e;
+}
+
+button.danger:hover {
+  background: #8c1d17;
+}
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Visible focus for keyboard users (NFR-6). */
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #f2a900;
+  outline-offset: 2px;
+}
+
+.error {
+  min-height: 1.5rem;
+  margin: 0.75rem 0 0;
+  color: #b3261e;
+  font-weight: 600;
+}
+
+.error:empty {
+  margin: 0;
+}
+
+.empty-state {
+  color: #555c66;
+  font-style: italic;
+}
+
+.noscript {
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background: #fff4d6;
+  border: 1px solid #f2a900;
+  border-radius: 0.25rem;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid #e3e5e9;
+}
+
+.task:last-child {
+  border-bottom: none;
+}
+
+.task input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.task-text {
+  flex: 1;
+  min-width: 8rem;
+  overflow-wrap: anywhere;
+}
+
+/* Completed: strikethrough AND a text badge, so status is not colour alone. */
+.task.completed .task-text {
+  text-decoration: line-through;
+  color: #555c66;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  border-radius: 1rem;
+}
+
+.badge.pending {
+  color: #7a4b00;
+}
+
+.badge.done {
+  color: #1d6b2f;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.edit-row {
+  flex: 1;
+  min-width: 12rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[hidden] {
+  display: none !important;
+}

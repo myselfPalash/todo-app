@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Todo</h1>
+
+    <noscript>
+      <p class="noscript">This Todo app needs JavaScript. Please enable JavaScript and reload the page.</p>
+    </noscript>
+
+    <form id="add-form" novalidate>
+      <label for="new-task">New task</label>
+      <div class="add-row">
+        <input id="new-task" name="description" type="text" maxlength="200" required autocomplete="off" placeholder="What do you need to do?">
+        <button type="submit">Add</button>
+      </div>
+    </form>
+
+    <p id="error" class="error" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading">Tasks</h2>
+      <p id="empty-state" class="empty-state" hidden>No tasks yet.</p>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </main>
+</body>
+</html>
